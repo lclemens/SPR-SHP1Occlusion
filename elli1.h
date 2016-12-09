@@ -2,24 +2,19 @@
 
 #define TWISTER genrand_real3()
 
-#define NMAX          400
-
-#define NTMAX      1e10
-#define NTADAPT    20000
-#define KSCRITICAL 0.002
-
-#define NTCHECK  1e6
-#define NBINS    400
-
-#define PI       3.14159265359
-#define INF      1e14
-#define KBT      4.2
-
-#define DCHIMIN 0.1
-#define concentrationBin 0.2
-#define DXMAX 1
-#define DXMIN 0.01
-
+#define NMAX                400
+#define NTMAX               1e10
+#define NTADAPT             20000
+#define KSCRITICAL          0.002
+#define NTCHECK             1e6
+#define NBINS               400
+#define PI                  3.14159265359
+#define INF                 1e14
+#define KBT                 4.2
+#define DCHIMIN             0.1
+#define concentrationBin    0.2
+#define DXMAX               1
+#define DXMIN               0.01
 
 // Model parameters
 double boxSize;
