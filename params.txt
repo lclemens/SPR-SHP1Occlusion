@@ -1,0 +1,21 @@
+rSH2                1.45
+lPocketSH2          0.1
+rF                  2.2
+rAnchorAnchor       5.1
+lContourSH2SH2      1.8
+lPersistenceSH2SH2  0.6
+xSH2SH2             0.0
+kSH2SH2             0.0
+lContourSH2F        1.5
+lPersistenceSH2F    0.6
+xSH2F               0.0
+kSH2F               0.0
+lContourITIM        12.0
+lPersistenceITIM    0.38
+xITIM               0.0
+kITIM               0.0
+MembraneTF          1
+NSH2isY1bound       1
+CHS2isY1bound       0
+
+All distances in nanometers.
