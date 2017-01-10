@@ -110,7 +110,7 @@ void elliMetropolis()
             if (membraneTF)
             {
                 // if the domain sphere would exceed the box constraints in any direction
-                if (   rPropose[iPropose][2] < radius[iPropose] || rPropose[iPropose][2] > boxSize
+                if (   rPropose[iPropose][2] < radius[iPropose] || rPropose[iPropose][2] > (boxSize-radius[iPropose])
                     || rPropose[iPropose][0] < -(boxSize/2-radius[iPropose]) || rPropose[iPropose][0] > +(boxSize/2-radius[iPropose])
                     || rPropose[iPropose][1] < -(boxSize/2-radius[iPropose]) || rPropose[iPropose][1] > +(boxSize/2-radius[iPropose]))
                 {
