@@ -80,23 +80,26 @@ void dataRecording()
     // Verbose output: One line is written each iteration.
     if (verboseTF)
     {
-        // output results to file
-        fList = fopen(runName, "a");
-        fprintf(fList, "%ld %f %f %f %f %f %f %ld",
-                nt,               // 1
-                E,                // 2
-                dx,               // 3
-                dx,               // 4
-                rate[0],          // 5
-                rate[1],          // 6
-                ksStatistic,      // 7
-                stericOcclusion); // 8
+        if (nt>20000 && nt<=24000)
+        {
+            // output results to file
+            fList = fopen(runName, "a");
+            fprintf(fList, "%ld %f %f %f %f %f %f %ld",
+                    nt,               // 1
+                    E,                // 2
+                    dx,               // 3
+                    dx,               // 4
+                    rate[0],          // 5
+                    rate[1],          // 6
+                    ksStatistic,      // 7
+                    stericOcclusion); // 8
 
-        for (i=0;i<N;i++)
-                fprintf(fList, " %f %f %f %f", r[i][0], r[i][1], r[i][2], 0.0);
+            for (i=0;i<N;i++)
+                    fprintf(fList, " %f %f %f %f", r[i][0], r[i][1], r[i][2], 0.0);
 
-        fprintf(fList, "\n");
-        fclose(fList);
+            fprintf(fList, "\n");
+            fclose(fList);
+        }
     }
 
     if (nt>NTCHECK)
