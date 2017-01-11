@@ -8,6 +8,7 @@ void elliMetropolis()
     // initial configuration
     for(i=0;i<N;i++)
     {
+        //random initial configuration
         r[i][0] = 0.5*boxSize*(2*TWISTER-1);
         r[i][1] = 0.5*boxSize*(2*TWISTER-1);
         r[i][2] = boxSize*TWISTER;
@@ -95,6 +96,8 @@ void elliMetropolis()
             // particle-particle hard-wall constraints
             for (i=0;i<N;i++)
             {
+                //Note later test for condition when it IS bound, for now only test NOT bound
+                //if not bound and intersecting spheres, then not satisfied
               // Note that the isBound matrix should be symmetric but is not, for efficiency.
                 if( i!=iPropose && isBound[iPropose][i]==0 && isBound[i][iPropose]==0 &&
                    (rPropose[i][0]-rPropose[iPropose][0])*(rPropose[i][0]-rPropose[iPropose][0])
@@ -106,6 +109,7 @@ void elliMetropolis()
                 }
             }
 
+            // what happens if membrane off?  Then no box constraints? When would we want this?
             // box
             if (membraneTF)
             {
@@ -142,7 +146,7 @@ void elliMetropolis()
               // CSH2-F link
             + 0.5*kSH2F  *pow((sqrt(pow((rPropose[3][0]-rPropose[4][0]),2)
                                    +pow((rPropose[3][1]-rPropose[4][1]),2)
-                                   +pow((rPropose[3][2]-rPropose[4][2]),2))-(xSH2F+radius[2]+radius[3])),2)
+                                   +pow((rPropose[3][2]-rPropose[4][2]),2))-(xSH2F+radius[3]+radius[4])),2)
             + 0; // --- TODO --- binding energies to include dynamic binding/unbinding
 
         // Bonds

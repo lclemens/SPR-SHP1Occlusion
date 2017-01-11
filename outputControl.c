@@ -80,7 +80,7 @@ void dataRecording()
     // Verbose output: One line is written each iteration.
     if (verboseTF)
     {
-        if (nt>20000 && nt<=24000)
+        if (nt>4990000 && nt<=5000005)
         {
             // output results to file
             fList = fopen(runName, "a");
