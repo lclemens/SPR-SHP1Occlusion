@@ -15,6 +15,7 @@
 #define concentrationBin    0.2
 #define DXMAX               1
 #define DXMIN               0.01
+#define TALKATIVE           1
 
 // Model parameters
 double boxSize;
@@ -25,7 +26,8 @@ double viscosity;
 double rSH2, lPocketSH2, rF;
 double lContourSH2SH2, lPersistenceSH2SH2, kSH2SH2, xSH2SH2,
        lContourSH2F,   lPersistenceSH2F,   kSH2F,   xSH2F,
-       lContourITIM,   lPersistenceITIM,   kITIM,   xITIM;
+       lContourITIM1,   lPersistenceITIM,   kITIM1,   xITIM1,
+       lContourITIM2,                       kITIM2,   xITIM2;
 double rAnchorAnchor;
 double kBond;
 
@@ -34,6 +36,7 @@ int nSH2SH2, n1, n2;
 // Model options
 int membraneTF;
 double NSH2isY1bound, CSH2isY1bound;
+double NSH2isY2bound, CSH2isY2bound;
 
 // Numerical parameters
 

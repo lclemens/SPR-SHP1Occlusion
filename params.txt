@@ -10,12 +10,17 @@ lContourSH2F        1.5
 lPersistenceSH2F    0.6
 xSH2F               0.0
 kSH2F               0.0
-lContourITIM        12.0
+lContourITIM1       6.0
+lContourITIM2       6.0
 lPersistenceITIM    0.38
-xITIM               0.0
-kITIM               0.0
+xITIM1              0.0
+xITIM2              0.0
+kITIM1              0.0
+kITIM2              0.0
 MembraneTF          1
 NSH2isY1bound       1
-CHS2isY1bound       0
+CSH2isY1bound       0
+NSH2isY2bound	     0
+CSH2isY2bound	     1
 
 All distances in nanometers.

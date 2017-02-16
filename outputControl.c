@@ -39,14 +39,15 @@ void finalizeSummary()
 
     sprintf(tmpString, "%s.summary.dat", runName);
     fSummary = fopen(tmpString, "a");
-    fprintf(fSummary, "%lf %lf %ld %lf %lf %lf %lf\n",
-                rAnchorAnchor,            // 1
-                lContourITIM,             // 2
-                nt,                       // 3
-                ksStatistic,              // 4
-                effectiveConcentration[1][4], // 5
-                effectiveConcentration[0][1], // 6
-                proximity[0][1]); // 7
+    fprintf(fSummary, "%ld %lf %lf %lf %lf %lf %lf %lf\n",
+                nt,                       // 1
+                rAnchorAnchor,            // 2
+                lContourITIM1,             // 3
+                lContourITIM2,              //4
+                ksStatistic,              // 5
+                effectiveConcentration[4][6], // 6
+                effectiveConcentration[1][6], // 7
+                proximity[1][6]); // 8
 
     fclose(fSummary);
 
@@ -75,24 +76,33 @@ void dataRecording()
             }
         }
 
-    rM = particleDistances[1][4]; // This is the variable whose distribution will be tested for convergence.
+    rM = particleDistances[4][6]; // This is the variable whose distribution will be tested for convergence.
 
     // Verbose output: One line is written each iteration.
     if (verboseTF)
     {
-        if (nt>4990000 && nt<=5000005)
+        if (nt>100000 && nt<=120000)
         {
             // output results to file
             fList = fopen(runName, "a");
-            fprintf(fList, "%ld %f %f %f %f %f %f %ld",
+//            fprintf(fList, "%ld %f %f %f %f %f %ld",
+                    //nt,               // 1
+                    //E,                // 2
+                    //dx,               // 3
+                    //rate[0],          // 4
+                    //rate[1],          // 5
+                    //ksStatistic,      // 6
+                    //stericOcclusion); // 7
+            
+            fprintf(fList, "%ld %f %f %f %f %f %f %f",
                     nt,               // 1
-                    E,                // 2
-                    dx,               // 3
-                    dx,               // 4
-                    rate[0],          // 5
-                    rate[1],          // 6
-                    ksStatistic,      // 7
-                    stericOcclusion); // 8
+                    ksStatistic,
+                    rSH2,
+                    lPocketSH2,
+                    rF,
+                    rAnchorAnchor,
+                    NSH2isY1bound,
+                    CSH2isY1bound);      // 6
 
             for (i=0;i<N;i++)
                     fprintf(fList, " %f %f %f %f", r[i][0], r[i][1], r[i][2], 0.0);
